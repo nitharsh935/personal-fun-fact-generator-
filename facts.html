@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .fact {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .fact-title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fun Facts About Coffee</h1>
+    <div id="coffee-facts"></div>
+
+    <script>
+        const coffeeFacts = {
+            "coffee_facts": [
+                {
+                    "fact": "Origin",
+                    "description": "Coffee is believed to have been discovered in Ethiopia. According to legend, a goat herder named Kaldi noticed his goats became energetic after eating berries from a certain tree, which led to the discovery of coffee."
+                },
+                {
+                    "fact": "Second Most Traded Commodity",
+                    "description": "Coffee is the second most traded commodity in the world, following crude oil."
+                },
+                {
+                    "fact": "Varieties",
+                    "description": "There are over 100 species of coffee, but the two main types are Arabica and Robusta. Arabica is known for its smooth, mild flavor, while Robusta is stronger and more bitter."
+                },
+                {
+                    "fact": "Coffee Belt",
+                    "description": "Coffee is grown in the 'Coffee Belt,' which includes regions between the Tropics of Cancer and Capricorn. Countries like Brazil, Vietnam, and Colombia are among the top producers."
+                },
+                {
+                    "fact": "Espresso vs. Drip Coffee",
+                    "description": "Espresso has less caffeine per serving than drip coffee. However, because espresso is typically consumed in smaller quantities, it has more caffeine per ounce."
+                },
+                {
+                    "fact": "Instant Coffee",
+                    "description": "Instant coffee was invented in 1901 by Japanese-American chemist Satori Kato in Chicago."
+                },
+                {
+                    "fact": "Coffee and Health",
+                    "description": "Studies have shown that coffee drinkers have a lower risk of several serious diseases, including type 2 diabetes, Alzheimer's, and Parkinson's."
+                },
+                {
+                    "fact": "Coffee Beans",
+                    "description": "What we call coffee 'beans' are actually seeds. They are found inside the red or purple fruit often referred to as a cherry."
+                },
+                {
+                    "fact": "Decaf Isn't Caffeine-Free",
+                    "description": "Decaffeinated coffee is not completely caffeine-free. It contains about 2-5 mg of caffeine per cup, compared to 95 mg in a regular cup of coffee."
+                },
+                {
+                    "fact": "Coffee and Culture",
+                    "description": "Coffee plays a significant role in many cultures. For example, in Italy, coffee is an integral part of daily life, with espresso being a staple. In Sweden, 'fika' is a coffee break that involves socializing with friends or colleagues."
+                }
+            ]
+        };
+
+        const factsContainer = document.getElementById('coffee-facts');
+
+        coffeeFacts.coffee_facts.forEach(fact => {
+            const factDiv = document.createElement('div');
+            factDiv.className = 'fact';
+
+            const factTitle = document.createElement('div');
+            factTitle.className = 'fact-title';
+            factTitle.textContent = fact.fact;
+
+            const factDescription = document.createElement('div');
+            factDescription.textContent = fact.description;
+
+            factDiv.appendChild(factTitle);
+            factDiv.appendChild(factDescription);
+            factsContainer.appendChild(factDiv);
+        });
+    </script>
+</body>
+</html>
